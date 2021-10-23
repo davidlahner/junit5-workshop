@@ -1,6 +1,6 @@
 apply plugin: 'java'
 
-ext.junit5Version	= '5.4.2'
+ext.junit5Version	= '5.8.1'
 
 apply plugin: "java"
 
@@ -23,15 +23,14 @@ dependencies {
 	implementation platform("org.junit:junit-bom:${junit5Version}")
 
 	// JUnit Jupiter API and TestEngine implementation
-	testImplementation("org.junit.jupiter:junit-jupiter-api")
-	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+	testImplementation('org.junit.jupiter:junit-jupiter:5.8.1')
 	testImplementation("org.junit.jupiter:junit-jupiter-params")
 
-	testImplementation 'org.hamcrest:hamcrest:2.1'
+	testImplementation 'org.hamcrest:hamcrest:2.2'
 
-	implementation 'org.hibernate:hibernate-core:5.2.10.Final'
+	implementation 'org.hibernate:hibernate-core:5.5.8.Final'
 	implementation 'javax.xml.bind:jaxb-api:2.2.11'
-	testImplementation 'com.h2database:h2:1.4.196'
+	testImplementation 'com.h2database:h2:1.4.200'
 }
 
 sourceCompatibility = 1.8
