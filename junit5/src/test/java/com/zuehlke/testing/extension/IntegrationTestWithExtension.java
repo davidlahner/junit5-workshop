@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.equalTo;
 @ExtendWith(PersonResourceExtension.class)
 class IntegrationTestWithExtension {
 
-    private PersonDao dao = new PersonDao();
+    private final PersonDao dao = new PersonDao();
 
     @Test
     void find_withExtension(PersonResource personResource) {

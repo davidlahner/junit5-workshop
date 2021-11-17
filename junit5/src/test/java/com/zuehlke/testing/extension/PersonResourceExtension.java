@@ -9,15 +9,15 @@ import java.lang.reflect.Parameter;
 public class PersonResourceExtension implements BeforeEachCallback, AfterEachCallback, ParameterResolver {
 
 	private static final String PERSON_RESOURCE = "personResource";
-	private Namespace namespace = Namespace.create("Zuehlke", "Testing", "Workshop");;
+	private final Namespace namespace = Namespace.create("Zuehlke", "Testing", "Workshop");
 
 	@Override
-	public void beforeEach(ExtensionContext context) throws Exception {
+	public void beforeEach(ExtensionContext context) {
 		getStore(context).put(PERSON_RESOURCE, new PersonResource());
 	}
 
 	@Override
-	public void afterEach(ExtensionContext context) throws Exception {
+	public void afterEach(ExtensionContext context) {
 		PersonResource people = (PersonResource) getStore(context).get(PERSON_RESOURCE);
 		people.cleanUp();
 	}

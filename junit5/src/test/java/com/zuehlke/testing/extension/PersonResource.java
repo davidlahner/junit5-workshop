@@ -8,8 +8,8 @@ import java.util.List;
 
 public class PersonResource {
 
-	private List<Person> people = new ArrayList<>();
-	private PersonDao dao = new PersonDao();
+	private final List<Person> people = new ArrayList<>();
+	private final PersonDao dao = new PersonDao();
 
 	public Person createPerson(String name) {
 		final Person person = new Person("", name);
